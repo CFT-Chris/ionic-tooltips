@@ -7,7 +7,7 @@ Tooltips module for apps built with Ionic Framework.
 
 ## Compatibility
 
-This module is designed to work with `ionic-angular@^3.9.2` but it should work with any version above `2.0.0` as it doesn't heavily depend on the Ionic Framework.
+This module is designed to work with `@ionic/angular@^4.0.0-beta.15`.
 
 ## Demo
 

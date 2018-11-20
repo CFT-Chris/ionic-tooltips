@@ -1,5 +1,5 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { IonicModule } from 'ionic-angular';
+import { IonicModule } from '@ionic/angular';
 import { TooltipController } from './tooltip.cotroller';
 
 import { TooltipBox } from './tooltip-box.component';

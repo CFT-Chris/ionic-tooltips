@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { IonicModule } from 'ionic-angular';
+import { IonicModule } from '@ionic/angular';
 
 import { TooltipBox } from './tooltip-box.component';
 import { Tooltip } from './tooltip.directive';
@@ -54,7 +54,7 @@ describe('Tooltip', () => {
     TestBed.configureTestingModule({
       declarations: [TestPage],
       imports: [
-        IonicModule.forRoot(TestPage), // to be able to inject Platform
+        IonicModule.forRoot(), // to be able to inject Platform
         BrowserAnimationsModule, // needed for TooltipsModule
         TooltipsModule
       ]

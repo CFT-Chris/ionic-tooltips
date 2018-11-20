@@ -11,7 +11,7 @@ import {
   OnInit,
   ViewContainerRef,
 }                   from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Platform } from '@ionic/angular';
 
 import { TooltipBox } from './tooltip-box.component';
 import { TooltipController } from './tooltip.cotroller';
