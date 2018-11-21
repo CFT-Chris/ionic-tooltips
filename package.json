@@ -16,7 +16,10 @@
     "test": "karma start ./test-config/karma.conf.js --single-run"
   },
   "files": [
-    "dist"
+    "dist",
+    "src",
+    "tsconfig.json",
+    "tslint.json"
   ],
   "author": "Ibby Hadeed <ibby@zyra.ca>",
   "license": "MIT",
