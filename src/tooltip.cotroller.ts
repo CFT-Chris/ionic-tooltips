@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Tooltip } from './tooltip.directive';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class TooltipController {
   allowMultiple: boolean = true;
   activeTooltips: Tooltip[] = [];

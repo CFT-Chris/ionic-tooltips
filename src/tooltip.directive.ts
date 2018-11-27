@@ -70,12 +70,22 @@ export class Tooltip implements OnInit, AfterViewInit, OnDestroy {
     return this._active;
   }
 
+  @Input()
+  set view(val: ViewContainerRef) {
+    this._viewContainer = val;
+  }
+
+  get view(): ViewContainerRef {
+    return(this._viewContainer);
+  }
+
   private _arrow: boolean = false;
   private _navTooltip: boolean = false;
   private tooltipElement: ComponentRef<TooltipBox>;
   private tooltipTimeout: any;
   private _canShow: boolean = true;
   private _active: boolean = false;
+  private _viewContainer: ViewContainerRef;
 
   constructor(
     private el: ElementRef,
@@ -200,14 +210,15 @@ export class Tooltip implements OnInit, AfterViewInit, OnDestroy {
   }
 
   private _createTooltipComponent() {
-    let viewport: ViewContainerRef = (<any>this.appRef.components[0])._component
-        ._viewport,
-      componentFactory = this._componentFactoryResolver.resolveComponentFactory(
-        TooltipBox,
-      );
+    let viewport: ViewContainerRef = this._viewContainer || (<any>this.appRef.components[0])._component._viewport;
+    let componentFactory = this._componentFactoryResolver.resolveComponentFactory(TooltipBox);
 
-    this.tooltipElement = viewport.createComponent(componentFactory);
-    this.tooltipCtrl.addTooltip(this);
+    if (viewport) {
+      this.tooltipElement = viewport.createComponent(componentFactory);
+      this.tooltipCtrl.addTooltip(this);
+    }
+    else
+      console.warn('No view container to create tooltip in');
   }
 
   private _getTooltipPosition() {

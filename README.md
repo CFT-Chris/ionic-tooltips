@@ -17,6 +17,8 @@ Below is a gif showing the module in action, you can also clone the example proj
 
 ## Examples
 
+(NOTE: you may need to provide a `view` attribute value in the following examples to have it work with Ionic 4 beta 0.15 -- see Usage)
+
 The module can be used to display tooltips for any element in your app. It also provides a special treatment for buttons in the header navigation (inspired by Google's apps).
 
 Here's a quick example to show a tooltip below a button:
@@ -24,9 +26,9 @@ Here's a quick example to show a tooltip below a button:
 ```html
 <!-- positionV specifies where the tooltip should be displayed vertically, can be either top or bottom -->
 <!-- arrow tells the tooltip directive to show an arrow above the tooltip box -->
-<button ion-button tooltip="I'm a tooltip below a button" positionV="bottom" arrow>
+<ion-button tooltip="I'm a tooltip below a button" positionV="bottom" arrow>
   Press me to see a tooltip
-</button>
+</ion-button>
 ```
 
 And here's another example to show a tooltip below a nav button:
@@ -35,10 +37,10 @@ And here's another example to show a tooltip below a nav button:
 <ion-header>
   <ion-navbar>
     <ion-title>Page title</ion-title>
-    <ion-buttons end>
+    <ion-buttons slot="end">
       <!-- navTooltip tells the tooltip directive that this is a nav button -->
-      <ion-button icon-only tooltip="Call" navTooltip>
-        <ion-icon name="call"></ion-icon>
+      <ion-button tooltip="Call" navTooltip>
+        <ion-icon name="call" slot="icon-only"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-navbar>
@@ -93,6 +95,29 @@ Now you're ready to use this module. See information below for usage.
 ## Usage
 
 The `tooltip` directive takes a string, which will be used as the tooltip text. When using the `tooltip` directive, you can also use the following inputs:
+
+#### `view`
+
+(ViewContainerRef) As of Ionic 4 beta 0.15, Ionic's angular components don't expose `_viewContainerRef` like other ComponentRefs, so you may see a warning `No view container to create tooltip in` if you don't provide a view yourself. You will need to provide the `_viewContainerRef` you want to contain the tooltips. This will commonly be the `ViewContainerRef` for the `ion-app` component (so the tooltip has access to the entire viewport), but you can choose something nested deeper in the `ion-app` component if you wish.
+
+The easiest way to get the `ion-app` `_viewContainerRef` is to have the following ViewChild declaration in your `app.component.ts`:
+
+```ts
+import { ViewChild, ViewContainerRef } from '@angular/core';
+
+...
+
+@ViewChild('myApp', { read: ViewContainerRef }) viewContainerApp: ViewContainerRef;
+
+```
+
+And in your `app.component.html`:
+
+```html
+<ion-app #myApp>
+  <ion-router-outlet></ion-router-outlet>
+</ion-app>
+```
 
 #### `navTooltip`
 
