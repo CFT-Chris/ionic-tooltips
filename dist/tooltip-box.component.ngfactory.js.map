@@ -1,0 +1,1 @@
+{"version":3,"file":"tooltip-box.component.ngfactory.js","sourceRoot":"","sources":["../src/tooltip-box.component.ngfactory.ts","../src/tooltip-box.component.ts.TooltipBox.html"],"names":[],"mappings":";;;;;;;;;;;4DCAA,0IAAU","sourcesContent":["import * as i0 from '@angular/core';\ni0.ComponentFactory;\n","{{ text }}"]}
