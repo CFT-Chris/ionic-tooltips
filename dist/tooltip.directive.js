@@ -18,7 +18,7 @@ var Tooltip = /** @class */ (function () {
         this.platform = platform;
         this._componentFactoryResolver = _componentFactoryResolver;
         this.tooltipCtrl = tooltipCtrl;
-        this.mobileEvent = 'press';
+        this.mobileEvent = 'touchstart';
         this.desktopEvent = 'hover';
         this.duration = 3000;
         this._arrow = false;
@@ -151,7 +151,7 @@ var Tooltip = /** @class */ (function () {
         }
     };
     Tooltip.prototype.onPress = function () {
-        if (this.event === 'press') {
+        if (this.event === 'touchstart') {
             this.trigger();
         }
     };
@@ -329,7 +329,7 @@ var Tooltip = /** @class */ (function () {
         __metadata("design:returntype", void 0)
     ], Tooltip.prototype, "onClick", null);
     __decorate([
-        HostListener('press'),
+        HostListener('touchstart'),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", []),
         __metadata("design:returntype", void 0)

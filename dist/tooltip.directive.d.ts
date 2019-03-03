@@ -10,9 +10,9 @@ export declare class Tooltip implements OnInit, AfterViewInit, OnDestroy {
     tooltip: string;
     positionV: string;
     positionH: string;
-    event: 'press' | 'click' | 'hover';
-    mobileEvent: 'press' | 'click';
-    desktopEvent: 'press' | 'click' | 'hover';
+    event: 'touchstart' | 'click' | 'hover';
+    mobileEvent: 'touchstart' | 'click';
+    desktopEvent: 'touchstart' | 'click' | 'hover';
     topOffset: number;
     leftOffset: number;
     hideOthers: boolean;

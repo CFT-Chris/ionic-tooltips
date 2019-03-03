@@ -7,7 +7,7 @@ Tooltips module for apps built with Ionic Framework.
 
 ## Compatibility
 
-This module is designed to work with `@ionic/angular@^4.0.0-beta.15`.
+This module is designed to work with `@ionic/angular@^4.0.2`.
 
 ## Demo
 
@@ -17,7 +17,7 @@ Below is a gif showing the module in action, you can also clone the example proj
 
 ## Examples
 
-(NOTE: you may need to provide a `view` attribute value in the following examples to have it work with Ionic 4 beta 0.15 -- see Usage)
+(NOTE: you may need to provide a `view` attribute value in the following examples to have it work with Ionic 4 -- see Usage)
 
 The module can be used to display tooltips for any element in your app. It also provides a special treatment for buttons in the header navigation (inspired by Google's apps).
 
@@ -98,7 +98,7 @@ The `tooltip` directive takes a string, which will be used as the tooltip text. 
 
 #### `view`
 
-(ViewContainerRef) As of Ionic 4 beta 0.15, Ionic's angular components don't expose `_viewContainerRef` like other ComponentRefs, so you may see a warning `No view container to create tooltip in` if you don't provide a view yourself. You will need to provide the `_viewContainerRef` you want to contain the tooltips. This will commonly be the `ViewContainerRef` for the `ion-app` component (so the tooltip has access to the entire viewport), but you can choose something nested deeper in the `ion-app` component if you wish.
+(ViewContainerRef) Ionic 4's angular components don't expose `_viewContainerRef` like other ComponentRefs, so you may see a warning `No view container to create tooltip in` if you don't provide a view yourself. You will need to provide the `_viewContainerRef` you want to contain the tooltips. This will commonly be the `ViewContainerRef` for the `ion-app` component (so the tooltip has access to the entire viewport), but you can choose something nested deeper in the `ion-app` component if you wish.
 
 The easiest way to get the `ion-app` `_viewContainerRef` is to have the following ViewChild declaration in your `app.component.ts`:
 

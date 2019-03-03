@@ -28,11 +28,11 @@ export class Tooltip implements OnInit, AfterViewInit, OnDestroy {
 
   @Input() positionH: string;
 
-  @Input() event: 'press' | 'click' | 'hover';
+  @Input() event: 'touchstart' | 'click' | 'hover';
 
-  @Input() mobileEvent: 'press' | 'click' = 'press';
+  @Input() mobileEvent: 'touchstart' | 'click' = 'touchstart';
 
-  @Input() desktopEvent: 'press' | 'click' | 'hover' = 'hover';
+  @Input() desktopEvent: 'touchstart' | 'click' | 'hover' = 'hover';
 
   @Input() topOffset: number;
 
@@ -188,9 +188,9 @@ export class Tooltip implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  @HostListener('press')
+  @HostListener('touchstart')
   onPress(): void {
-    if (this.event === 'press') {
+    if (this.event === 'touchstart') {
       this.trigger();
     }
   }
